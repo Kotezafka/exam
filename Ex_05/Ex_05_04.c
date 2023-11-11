@@ -1,5 +1,68 @@
+#include <stdio.h>
+#include <stdlib.h>
 
+int check_exist(int *arr, int l, int value);
 
+int main()
+{
+    int *arr = NULL;
+    int n = 10;
+    int i = 0;
+
+    arr = (int *)calloc(n, sizeof(int));
+
+    do
+    {
+        int k = -1;
+
+        scanf("%d", &k);
+        
+        if (k == -1) 
+        break;
+
+        if (check_exist(arr, i, k) == 1)
+        {
+            continue;
+        }
+        else
+        {
+            arr[i] = k;
+            ++i;
+        }
+
+        if (i == n) 
+        { 
+            arr = (int *)realloc(arr, 10 * sizeof(int)); 
+            n += 10; 
+        }
+    } while (1);
+
+    if(i == 0)
+    return 0;
+
+    int j = 0;
+    for(j = 0; j < i - 1; ++j)
+    {
+        printf("%d ", arr[j]);
+    }
+    printf("%d", arr[j]);
+
+    free(arr);
+
+    return 0;
+}
+
+int check_exist(int *arr, int l, int value)
+{
+    for(int m = 0; m < l; ++m)
+    {
+        if (arr[m] == value)
+        {
+            return 1;
+        }
+    }
+    return 0;
+}
 
 
 
