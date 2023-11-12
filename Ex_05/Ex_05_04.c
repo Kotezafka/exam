@@ -15,13 +15,17 @@ int main()
     {
         int k = -1;
 
-        if(scanf("%d", &k) != 1)
+        scanf("%d", &k);
+
+        char c;
+        c = getchar();
+        if (c != '\n' && c != ' ')
         {
             printf("n/a");
             return 0;
         }
         
-        if (k == -1) 
+        if (k == -1) // при -1 переходит на новую строку
         break;
 
         if (check_exist(arr, i, k) == 1)

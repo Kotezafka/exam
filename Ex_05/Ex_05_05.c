@@ -13,10 +13,19 @@ int main()
     { 
         int k = -1; 
          
-        scanf("%d", &k); 
+        scanf("%d", &k);
+
+        char c;
+        c = getchar();
+        if(c != '\n' && c != ' ')
+        {
+            printf("n/a");
+            return 0;
+        }
          
-        if (k == -1) 
-        break; 
+        if (k == -1) // при -1 переходит на новую строку 
+        break;
+
         arr[i] = k; 
         ++i; 
         if (i == n) 

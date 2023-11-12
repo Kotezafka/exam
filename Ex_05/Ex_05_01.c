@@ -8,19 +8,55 @@ int main()
     int n, 
         sumnum = 0; 
  
-    scanf("%d", &n); 
+    if(scanf("%d", &n) != 1)
+    {
+        printf("n/a");
+        return 0;
+    }
+
+    char c;
+    c = getchar();
+    if(c != '\n' && c != ' ')
+    {
+        printf("n/a");
+        return 0;
+    }
+
       
     arr1 = (int *)calloc(n, sizeof(int)); 
     arr2 = (int *)calloc(n, sizeof(int)); 
  
     for(int j = 0; j < n; ++j) 
     { 
-        scanf("%d", &arr1[j]); 
+        if(scanf("%d", &arr1[j]) != 1)
+        {
+            printf("n/a");
+            return 0;
+        }
+
+        c = getchar();
+        if(c != '\n' && c != ' ')
+        {
+            printf("n/a");
+            return 0;
+        }
+
     } 
      
     for(int j = 0; j < n; ++j) 
     { 
-        scanf("%d", &arr2[j]); 
+        if(scanf("%d", &arr2[j]) != 1)
+        {
+            printf("n/a");
+            return 0;
+        }
+
+        c = getchar();
+        if(c != '\n' && c != ' ')
+        {
+            printf("n/a");
+            return 0;
+        }
     } 
  
     for (int i = 0; i < n; ++i) 
