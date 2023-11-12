@@ -46,7 +46,6 @@ int main()
     {
         for(int j = m - 1; j >= 1; --j)
         {
-            // printf("%d %d ", i, j);
             printf("%d ", arr[j * n + i]);
         }
         

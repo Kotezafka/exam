@@ -1,3 +1,106 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int n = 0;
+    int *arr1 = NULL;
+    int *arr2 = NULL;
+    int *arr3 = NULL;
+
+    if (scanf("%d", &n) != 1)
+    {
+        printf("n/a");
+        return 0;
+    }
+
+    char c;
+    c = getchar();
+
+    if (c != '\n' && c != ' ')
+    {
+        printf("n/a");
+        return 0;
+    }
+
+    arr1 = (int *)calloc(n * n, sizeof(int));
+    arr2 = (int *)calloc(n * n, sizeof(int));
+    arr3 = (int *)calloc(n * n, sizeof(int));
+
+    int i = 0,
+        j = 0;
+
+    for(i = 0; i < n; ++i)
+    {
+        for (j = 0; j < n; ++j)
+        {
+            if(scanf("%d", &arr1[i * n + j]) != 1)
+            {
+                printf("n/a");
+                return 0;
+            }
+
+            c = getchar();
+            if(c != '\n' && c != ' ')
+            {
+                printf("n/a");
+                return 0;
+            }
+        }
+    }
+
+    for(i = 0; i < n; ++i)
+    {
+        for (j = 0; j < n; ++j)
+        {
+            if(scanf("%d", &arr2[i * n + j]) != 1)
+            {
+                printf("n/a");
+                return 0;
+            }
+
+            c = getchar();
+            if(c != '\n' && c != ' ')
+            {
+                printf("n/a");
+                return 0;
+            }
+        }
+    }
+
+    for(i = 0; i < n; ++i)
+    {
+        for (int j = 0; j < n; ++j)
+        {
+            for (int f = 0; f < n; ++f)
+            {
+                arr3[j * n + i] += arr1[j * n + f] * arr2[f * n + i];
+            }
+        }
+    }
+
+    for(i = 0; i < n; ++i)
+    {
+        for (j = 0; j < n - 1; ++j)
+        {
+            printf("%d ", arr3[i * n + j]);
+        }
+        printf("%d", arr3[i * n + j]);
+
+        if(i != n - 1) printf("\n");
+    }
+
+
+    free(arr1);
+    free(arr2);
+    free(arr3);
+
+    return 0;
+}
+
+
+
+
 // Exam_06_01 Умножение квадратных матриц
 
 // Уровень: 4
