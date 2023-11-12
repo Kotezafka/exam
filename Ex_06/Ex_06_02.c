@@ -28,7 +28,7 @@ int main()
     int i = 0;
     for(i = 0; i < m * n; ++i)
     {
-        if (scanf("%d", &arr[i]) != 1)
+        if(scanf("%d", &arr[i]) != 1)
         {
             printf("n/a");
             return 0;

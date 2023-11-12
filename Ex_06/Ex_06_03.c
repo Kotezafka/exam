@@ -1,3 +1,71 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int m = 0,
+        n = 0;
+    int *arr = NULL;
+
+    if(scanf("%d%d", &m, &n) != 2)
+    {
+        printf("n/a");
+        return 0;
+    }
+
+    char c;
+    c = getchar();
+
+    if(c != '\n' && c != ' ')
+    {
+        printf("n/a");
+        return 0;
+    }
+
+    arr = (int *)calloc(m * n, sizeof(int));
+
+    int i = 0;
+    for(i = 0; i < m * n; ++i)
+    {
+        if(scanf("%d", &arr[i]) != 1)
+        {
+            printf("n/a");
+            return 0;
+        }
+
+        c = getchar();
+
+        if(c != '\n' && c != ' ')
+        {
+            printf("n/a");
+            return 0;
+        }
+    }
+    
+    for (i = 0; i <= n - 1; ++i)
+    {
+        for(int j = m - 1; j >= 1; --j)
+        {
+            // printf("%d %d ", i, j);
+            printf("%d ", arr[j * n + i]);
+        }
+        
+        if (i == n - 1) printf("%d", arr[i]);
+        else
+        {
+            printf("%d\n", arr[i]);
+        }
+    }
+    
+    free(arr);
+
+    return 0;
+}
+
+
+
+
+
 // Exam_06_03 Вращение матрицы
 
 // Уровень: 4
