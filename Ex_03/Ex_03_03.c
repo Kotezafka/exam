@@ -21,14 +21,7 @@ int main (void)
     num_2 = x % 10;  // 5
     num_1 = abs(x / 10);   // 1
 
-    if (x > 0)
-    {
-        printf("%d%d%d", num_3, num_2, num_1);
-    } 
-    else 
-    {
-        printf("%d%d%d", -num_3, num_2, num_1);
-    }
+    printf("%d%d%d", num_3, num_2, num_1);
 
     return 0;
 }
