@@ -22,9 +22,19 @@ int main (void)
 {
     double rad, deg;
 
-    if (scanf("%lf", &rad) == 1)
+    if (scanf("%lf", &rad) != 1)
     {
-        if (rad < 0)
+        printf("n/a");
+        return 0;
+    }
+
+    if (getchar() != '\n')
+    {
+        printf("n/a");
+        return 0;
+    }
+
+    if (rad < 0)
         {
             printf("n/a");
             return 0;
@@ -32,11 +42,6 @@ int main (void)
         
         deg = rad * 57.29;
         printf("%.0lf", deg);
-    }
-    else
-    {
-        printf("n/a");
-    }
 
     return 0;
 }
