@@ -35,13 +35,13 @@ int main (void)
     }
 
     if (rad < 0)
-        {
-            printf("n/a");
-            return 0;
-        }
-        
-        deg = rad * 57.29;
-        printf("%.0lf", deg);
+    {
+        printf("n/a");
+        return 0;
+    }
+    
+    deg = rad * 57.29;
+    printf("%.0lf", deg);
 
     return 0;
 }
