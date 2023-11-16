@@ -30,7 +30,6 @@ int main ()
         return 0;
     }
 
-    printf("%d", max);
     return 0;
 }
 
