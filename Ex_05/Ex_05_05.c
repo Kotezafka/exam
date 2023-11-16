@@ -9,7 +9,7 @@ int main()
      
     arr = (int *)calloc(n, sizeof(int)); 
      
-    do 
+    while (1)
     { 
         int k = -1; 
          
@@ -33,7 +33,7 @@ int main()
             arr = realloc(arr, 10 * sizeof(int)); 
             n += 10; 
         } 
-    }while(1); 
+    } 
      
     if (i == 0) 
     return 0; 
